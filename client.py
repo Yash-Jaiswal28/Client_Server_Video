@@ -14,7 +14,7 @@ def connect():
 def disconnect():
     print('Disconnected from the server')
 
-@sio.on('processed_frame')
+@sio.on('receive_frame')
 def receive_frame(data):
     # Convert the processed frame received from the server and display
     frame = cv2.imdecode(np.frombuffer(data['frame'], dtype=np.uint8), cv2.IMREAD_COLOR)
